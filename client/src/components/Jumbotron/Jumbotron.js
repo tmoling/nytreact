@@ -4,8 +4,9 @@ import Header from '../Header/Header.js'
 
  const jumbotron = () => (
     <div className="jumbotron text-center">
-        <Header>How Will the New York Times REACT to This?</Header>
+        <h1>New York Times Article Scraper</h1>
+        <h2>Search for and annotate articles of interest</h2>
         </div>
 );
 
-export default jumbotron;
+export default Jumbotron;

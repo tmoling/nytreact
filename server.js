@@ -8,6 +8,7 @@ const request = require("request");
 const PORT = process.env.PORT || 3000;
 const db=require("./models/Articles.js");
 const router = require("express").Router();
+//var path = require('path');
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact";
 
 
@@ -23,6 +24,10 @@ app.use(routes);
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI,{useMongoClient: true});
+
+app.get('*', function(req,res) {
+  res.sendFile(path.join(__dirname, './client/public/index.html'));
+});
 
 // listen on port 3000
 app.listen(PORT, function() {

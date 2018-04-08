@@ -49,11 +49,7 @@ export default {
 .catch(error => {
     console.log(error.response)
 });
-
-
-
     },
-
 
     loadArticles: function(){
         return axios.get("api/savedArticle")
