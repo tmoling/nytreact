@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const articleController = require("../controllers/articleController");
 
-//get, post, delete routes
+//get, post, delete routes for saved
 
 router.route("/api/savedArticle")
   .post(articleController.create)
