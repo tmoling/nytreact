@@ -3,13 +3,12 @@ import axios from 'axios';
 
 export default {
 
+    //searching for articles
     getArticles: function (queryTerm) {
 
         if (queryTerm.topic) {
 
             return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + "35fbaef7c1814ef59add17fbceef1719&q=" + queryTerm.topic)
-
-
         }
 
 
@@ -37,26 +36,23 @@ export default {
         }
     },
 
-
+    //saving and deleting articles
     saveArticles: function (savedArticle) {
 
-           
-
-       return  axios.post("/api/savedArticle",savedArticle)
-        .then(response => { 
-    console.log(response)
-})
-.catch(error => {
-    console.log(error.response)
-});
+        return axios.post("/api/savedArticle", savedArticle)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error.response)
+            });
     },
 
-    loadArticles: function(){
+    loadArticles: function () {
         return axios.get("api/savedArticle")
     },
 
-    deleteArticle: function(id) {
+    deleteArticle: function (id) {
         return axios.delete("/api/savedArticle/" + id);
     }
-
 };
