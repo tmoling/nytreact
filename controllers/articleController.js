@@ -1,6 +1,7 @@
 const db = require("../models/Articles.js");
 
 // Defining methods for the articlesController
+//searching for, finding and deleting articles
 module.exports = {
 
   create: function (req, res) {
